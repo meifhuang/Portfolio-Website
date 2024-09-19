@@ -23,12 +23,13 @@ html {
 /* navbar  */
 
 nav {
-    background-color: #99B2F5;
+    background-color: var(--darkerpurple);
     display: flex; 
     justify-content: space-around;
     align-items: center;
-    height: 12vh;
+    height: 15vh;
 }
+
 h4 {
     color: white;
 }
@@ -56,7 +57,7 @@ a {
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
-    color: #E8C7A6;
+    color: var(--orange);
 }
 
 /* hamburger menu */
@@ -77,24 +78,78 @@ a {
     height: 24px;
     width: 30px;
     cursor: pointer;
+    margin: 0.5rem 0;
 }
 .hamburger-icon span {
     width: 100%; 
     height: 2px;
     background-color: white;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.7s ease-out;
 }
 
 .menu-links {
-    position: absolute;
-    top: 100%;
-    right: 0%;
-    background-color: white;
-    width: fit-content;
-    max-height: 0;
+    display: none;
+    /* position: absolute; */
+    /* top: 100%; */
+    /* right: 0%; */
+    width: 10rem;
+    /* max-height: 0; */
     overflow: hidden; 
-    transition: all 0.3 ease-in-out;
 }
+
+.menu-links.open {
+    display: flex;
+    /* flex-direction: column; */
+    /* border: 1px solid black; */
+    transition: all 1s ease-in-out;
+    width: fit-content;
+}
+
+.navname {
+    display: 'flex';
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+/* .menu-links.open {
+    max-height: 400px;
+} */
+
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px); 
+}
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px); 
+    transition: all 0.3 ease-in-out;
+
+}
+.hamburger-icon span:first-child {
+    transform: none;
+}
+.hamburger-icon span:first-child {
+    opacity: 1;
+}
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+
 
 @media screen and (max-width: 1000px) {
     #desktop-nav {
@@ -102,7 +157,16 @@ a {
     }
     #hamburger-nav{
         display: flex;
+        transition: all 0.7s ease-out;
+
     }
+    #hamburger-nav.open {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        transition: all 0.7s ease-out;
+    }
+
 }
 
 
