@@ -61,7 +61,7 @@ a {
     text-underline-offset: 10px;
     text-decoration-thickness: 3px;
     color: var(--orange);
-    transition: all 1s ease-out;
+    transition: all 0.6s ease-out;
 }
 
 /* hamburger menu */
@@ -271,7 +271,7 @@ section {
     align-items: center;
     justify-content: start;
     text-align: center;
-    height: 100vh;
+    height: fit-content;
 }
 
 .skills {
@@ -280,8 +280,8 @@ section {
 }
 
 .section-container {
-    gap: 2rem;
-    margin: 1rem 3rem;
+    margin: 1.5rem 4.5rem;
+    line-height: 2rem;
 }
 
 .exp-title {
