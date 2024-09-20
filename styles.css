@@ -308,7 +308,8 @@ h2 {
 }
 
 .article-container {
-    width: 15rem;
+    /* display: flex; */
+    /* width: rem; */
     color: rgb(53,53,53);
     
 }
