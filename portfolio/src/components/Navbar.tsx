@@ -10,7 +10,7 @@ const Navbar: React.FC = () => (
   <AppBar position="static" color="primary" sx={{height: '75px'}}>
     <Toolbar>
       <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-        mh.
+        MH 
       </Typography>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
         <Typography sx={{ mx: 2 }}><a href="#home" style={{ color: '#fff', textDecoration: 'none' }}>home</a></Typography>

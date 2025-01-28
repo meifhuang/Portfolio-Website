@@ -108,7 +108,7 @@ const Projects: React.FC = () => {
                             left: 0,
                             width: "100%",
                             height: "100%",
-                            backgroundColor: "rgba(153,178,245, 0.98)",
+                            backgroundColor: "rgba(199,213,249, 0.98)",
                             color: "white",
                             display: "flex",
                             flexDirection: "column",
@@ -180,6 +180,7 @@ const Projects: React.FC = () => {
                         </Box>
                     </Card>
                 ))}
+                
                     </Box>
                 </Box>
                 <style>
