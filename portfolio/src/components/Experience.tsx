@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid2, Typography, Paper, Avatar, Stack } from '@mui/material';
+import { Box, Grid2, Typography, Paper, Avatar, Stack, Divider } from '@mui/material';
 import BazarLogo from "../assets/bazar logo.jpeg";
 
 // Define a type for each internship or job experience
@@ -40,14 +40,17 @@ const experiences: Experience[] = [
 
 const ExperienceSection: React.FC = () => {
   return (
-    <Stack sx={{ padding: '20px'}} marginBottom={10}>
-       <Typography variant="h4" gutterBottom textAlign="center" marginBottom={5}>
-                Experiences
+    <Stack marginBottom={10}>
+      <Box display="flex" alignItems="center" justifyContent="flex-start" position="relative" marginLeft={10}> 
+       <Typography variant="h3" gutterBottom textAlign="center" marginBottom={5} position='relative'>
+                EXPERIENCE  
         </Typography>
+        <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box>
+      </Box>
 
       <Stack spacing={4} direction='row' alignItems='center' justifyContent='center'>
         {experiences.map((experience, index) => (
-          <Stack >
+          <Stack>
             <Paper sx={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '10px', border:1, width: '400px'}}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 {/* Company Logo */}

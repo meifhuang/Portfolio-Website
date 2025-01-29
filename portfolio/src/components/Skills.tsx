@@ -4,6 +4,7 @@ import CSS from '../assets/skills/CSS3.png';
 import JS from '../assets/skills/JavaScript.png';
 import Python from '../assets/skills/python.png';
 import TS from '../assets/skills/typescript.png';
+import SkillBox from './SkillBox';
 
 // Sample skills data
 const skills = [
@@ -25,71 +26,41 @@ const skills = [
 ];
 
 export default function Skills() {
-  return (
-    <Box sx={{ padding: '20px' }}>
-      <Typography variant="h2" sx={{ marginBottom: '20px', fontWeight: 'bold' }}>
-        My Skills
-      </Typography>
 
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '15px',
-          alignItems: 'center',
-          border: 5
-        }}
-      >
-        {skills.map((skill, index) => (
-          <Box
-            key={index}
-            sx={{
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              padding: '10px',
-              borderRadius: '10px',
-              boxShadow: 2,
-              position: 'relative',
-              clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-            //   backgroundColor: '#fff',
-              transition: 'transform 0.3s ease-in-out',
-              '&:hover': {
-                transform: 'scale(1.1)',
-                boxShadow: 3,
-              },
-              backgroundColor: 'primary',
-              width: '80px',
-              border: 17,
-              borderColor: '#C7D5F9',
-              color: 'primary'
-            }}
-          >
-            <img
-              src={skill.image}
-              alt={skill.name}
-            //   width="40"
-            //   height="40"
-              style={{ marginBottom: '5px', backgroundColor: 'transparent', margin: 4}}
-            />
-            {/* <Typography
-              variant="body2"
-              sx={{
-                fontSize: '14px',
-                color: '#333',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textAlign: 'center',
-              }}
-            >
-              {skill.name}
-            </Typography> */}
+  return (
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'space-around', padding: '20px', mb:15}}>
+        {/* Skills Title */}
+        <Box sx={{ width: '150px', marginRight: '30px', textAlign: 'left' }}>
+          <Typography variant="h3" sx={{ fontWeight: 'bold', marginBottom: '20px' }}>
+            SKILLS
+          </Typography>
+          <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box>
+
+        </Box>
+  
+        {/* Skills Columns */}
+        <Box sx={{ display: 'flex', gap: '30px' }}>
+          {/* First Column (3 Skills) */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:6}}>
+            {skills.slice(0, 3).map((skill, index) => (
+              <SkillBox key={index} name={skill.name} image={skill.image}/>
+            ))}
           </Box>
-        ))}
+  
+          {/* Second Column (4 Skills) */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px'}}>
+            {skills.slice(5, 9).map((skill, index) => (
+              <SkillBox key={index} name={skill.name} image={skill.image}/>
+            ))}
+          </Box>
+          
+          {/* Third Column (3 Skills) */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:6 }}>
+            {skills.slice(8, 11).map((skill, index) => (
+               <SkillBox key={index} name={skill.name} image={skill.image}/>
+              ))}
+          </Box>
       </Box>
-    </Box>
-  );
+  </Box>
+  )
 }

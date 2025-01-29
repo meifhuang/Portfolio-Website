@@ -41,32 +41,23 @@ const Projects: React.FC = () => {
           },
       ];
       
-        // const scrollRef = useRef<HTMLDivElement>(null);
-      
-        // useEffect(() => {
-        //   const interval = setInterval(() => {
-        //     if (scrollRef.current) {
-        //         scrollRef.current.scrollBy({left: 300, behavior: 'smooth'}); 
-        //   }}, 3000);
-        //   return () => clearInterval(interval)
-        // }, []);
-
-    
     return ( 
     
             <Stack id="projects" sx={{marginBottom: 5}}>
-                <Typography variant="h4" gutterBottom textAlign="center">
-                Projects
-                </Typography>
+               <Box display="flex" alignItems="center" justifyContent="flex-start" position="relative" marginLeft={10}> 
+                <Typography variant="h3" gutterBottom textAlign="center" marginBottom={5} position='relative'>
+                           PROJECTS
+                    </Typography>
+                    <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box>
+                </Box>
                 <Box
                     sx={{
                         overflowX: "hidden", 
                         whiteSpace: "nowrap",
                         width: '100%',
                         position: 'relative',
-                        border: 5,  
+
                 }} 
-                  
                 >
                 <Box
                     sx={{
