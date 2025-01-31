@@ -15,6 +15,14 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Inter, Arial, sans-serif',
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 768, 
+      lg: 1024,
+      xl: 1280,
+    }}
 });
 
 export default theme;

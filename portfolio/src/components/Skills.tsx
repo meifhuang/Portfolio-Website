@@ -4,25 +4,38 @@ import CSS from '../assets/skills/CSS3.png';
 import JS from '../assets/skills/JavaScript.png';
 import Python from '../assets/skills/python.png';
 import TS from '../assets/skills/typescript.png';
+import React from '../assets/skills/React.png';
+import Node from '../assets/skills/Node.js.png';
+import Express from '../assets/skills/express.png';
+import Git from '../assets/skills/Git.png';
+import Firebase from '../assets/skills/Firebase.png'
+import MongoDB from '../assets/skills/mongo.png';
+import Bootstrap from '../assets/skills/bootstrap.png';
+import TailwindCSS from '../assets/skills/tailwind.png';
+import MaterialUI from '../assets/skills/materialUI.png';
+import PostgresSQL from '../assets/skills/postgres.png';
+
+
 import SkillBox from './SkillBox';
+
 
 // Sample skills data
 const skills = [
+  { name: 'Bootstrap', image: Bootstrap },
+  { name: 'MaterialUI', image: MaterialUI },
+  { name: 'TailwindCSS', image: TailwindCSS },
   { name: 'HTML', image: HTML },
   { name: 'CSS', image: CSS },
   { name: 'JavaScript', image: JS },
   { name: 'TypeScript', image: TS },
   { name: 'Python', image: Python },
-//   { name: 'Bootstrap', image: Boostrap },
-//   { name: 'MaterialUI', image: MaterialUI },
-//   { name: 'TailwindCSS', image: TailwindCSS },
-  { name: 'React', image: '/path/to/react-icon.png' },
-  { name: 'Node.js', image: '/path/to/nodejs-icon.png' },
-  { name: 'Express', image: '/path/to/express-icon.png' },
-  { name: 'MongoDB', image: '/path/to/mongodb-icon.png' },
-  { name: 'PostgresSQL', image: '/path/to/mongodb-icon.png' },
-  { name: 'Git', image: '/path/to/git-icon.png' },
-  { name: 'Firebase', image: '/path/to/firebase-icon.png' },
+  { name: 'MongoDB', image: MongoDB },
+  { name: 'PostgresSQL', image: PostgresSQL },
+  { name: 'Git', image: Git },
+  { name: 'Firebase', image: Firebase},
+  { name: 'React', image: React },
+  { name: 'Node.js', image: Node },
+  { name: 'Express', image: Express },
 ];
 
 export default function Skills() {
@@ -40,23 +53,25 @@ export default function Skills() {
   
         {/* Skills Columns */}
         <Box sx={{ display: 'flex', gap: '30px' }}>
-          {/* First Column (3 Skills) */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:6}}>
+        
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:10}}>
             {skills.slice(0, 3).map((skill, index) => (
               <SkillBox key={index} name={skill.name} image={skill.image}/>
             ))}
           </Box>
-  
-          {/* Second Column (4 Skills) */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px'}}>
-            {skills.slice(5, 9).map((skill, index) => (
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:6}}>
+            {skills.slice(3, 7).map((skill, index) => (
               <SkillBox key={index} name={skill.name} image={skill.image}/>
             ))}
           </Box>
-          
-          {/* Third Column (3 Skills) */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:6 }}>
-            {skills.slice(8, 11).map((skill, index) => (
+      
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:2}}>
+            {skills.slice(8, 12).map((skill, index) => (
+               <SkillBox key={index} name={skill.name} image={skill.image}/>
+              ))}
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:10}}>
+            {skills.slice(12, 16).map((skill, index) => (
                <SkillBox key={index} name={skill.name} image={skill.image}/>
               ))}
           </Box>

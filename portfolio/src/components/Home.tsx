@@ -6,10 +6,17 @@ import {
     Stack, 
     Button, 
  } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import image from "../assets/linked_propic.jpg"
 
-const Home: React.FC = () => (
+const Home: React.FC = () => { 
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+
+return (
+
   <Container id="about" sx={{height:'100vh', alignItems:'center', justifyContent:'center', display: 'flex'}}>
         <Stack 
             direction="row" 
@@ -61,5 +68,5 @@ const Home: React.FC = () => (
         </Stack>
   </Container>
 );
-
+}
 export default Home;

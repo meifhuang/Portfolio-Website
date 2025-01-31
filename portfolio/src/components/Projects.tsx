@@ -2,6 +2,9 @@ import React, {useRef, useEffect} from 'react';
 import { Box, Grid2, Card, CardContent, CardMedia, Typography, Button, Stack} from '@mui/material';
 import GymSocial from '../assets/gym social.png';
 import TrailYelp from '../assets/trail-pic.png';
+import MembersOnly from '../assets/membersonly-pic.png';
+import Library from "../assets/library-pic.png";
+import Memory from "../assets/memory-pic.png";
 
 
 const Projects: React.FC = () => {
@@ -19,26 +22,90 @@ const Projects: React.FC = () => {
           title: 'Trail Yelp',
           img: TrailYelp,
           github: 'https://github.com/meifhuang/Yelp-Trails',
+          live: 'https://members-only-nsuw.onrender.com/',
+        },
+        {
+          title: 'Members Only',
+          img: MembersOnly,
+          github: 'https://github.com/meifhuang/Members-Only',
           live: 'https://yelp-trails.onrender.com/',
         },
         {
-          title: 'Trail Yelp',
-          img: TrailYelp,
-          github: 'https://github.com/meifhuang/Yelp-Trails',
-          live: 'https://yelp-trails.onrender.com/',
+          title: 'Library',
+          img: Library,
+          github: 'https://github.com/meifhuang/Library',
+          live: 'https://library-d876a.web.app/',
         },
         {
-          title: 'Trail Yelp',
-          img: TrailYelp,
-          github: 'https://github.com/meifhuang/Yelp-Trails',
-          live: 'https://yelp-trails.onrender.com/',
-        },
-        {
+            title: 'Memory Card Game',
+            img: Memory,
+            github: 'https://github.com/meifhuang/Moduras',
+            live: 'https://modura.onrender.com/',
+          },
+          {
+            title: 'Gym Social',
+            img: GymSocial,
+            github: 'https://github.com/meifhuang/Gym-Social',
+            live: 'https://gym-social.onrender.com/',
+            description: 'A full stack social media workout application',
+            skills: ['react', 'typescript', 'nodeJS']
+          },
+          {
             title: 'Trail Yelp',
             img: TrailYelp,
             github: 'https://github.com/meifhuang/Yelp-Trails',
+            live: 'https://members-only-nsuw.onrender.com/',
+          },
+          {
+            title: 'Members Only',
+            img: MembersOnly,
+            github: 'https://github.com/meifhuang/Members-Only',
             live: 'https://yelp-trails.onrender.com/',
           },
+          {
+            title: 'Library',
+            img: Library,
+            github: 'https://github.com/meifhuang/Library',
+            live: 'https://library-d876a.web.app/',
+          },
+          {
+              title: 'Memory Card Game',
+              img: Memory,
+              github: 'https://github.com/meifhuang/Moduras',
+              live: 'https://modura.onrender.com/',
+        },
+        {
+            title: 'Gym Social',
+            img: GymSocial,
+            github: 'https://github.com/meifhuang/Gym-Social',
+            live: 'https://gym-social.onrender.com/',
+            description: 'A full stack social media workout application',
+            skills: ['react', 'typescript', 'nodeJS']
+          },
+          {
+            title: 'Trail Yelp',
+            img: TrailYelp,
+            github: 'https://github.com/meifhuang/Yelp-Trails',
+            live: 'https://members-only-nsuw.onrender.com/',
+          },
+          {
+            title: 'Members Only',
+            img: MembersOnly,
+            github: 'https://github.com/meifhuang/Members-Only',
+            live: 'https://yelp-trails.onrender.com/',
+          },
+          {
+            title: 'Library',
+            img: Library,
+            github: 'https://github.com/meifhuang/Library',
+            live: 'https://library-d876a.web.app/',
+          },
+          {
+              title: 'Memory Card Game',
+              img: Memory,
+              github: 'https://github.com/meifhuang/Moduras',
+              live: 'https://modura.onrender.com/',
+            },
       ];
       
     return ( 
@@ -62,11 +129,12 @@ const Projects: React.FC = () => {
                 <Box
                     sx={{
                         display: 'inline-block',
-                        animation: "scroll-left 50s linear infinite", 
+                        animation: "scroll-left 70s linear infinite", 
                     }}
                 >
                 {projects.map((project, index) => (
                     <Card sx={{
+                        key: {index}, 
                         display:'inline-block', 
                         width: '400px', 
                         height: '300px', 
