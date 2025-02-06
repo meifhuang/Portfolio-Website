@@ -1,70 +1,76 @@
 import React from 'react';
+import Animation from './Animation';
 import { 
     Box, 
     Typography,
     Container,
     Stack, 
     Button, 
+    useMediaQuery,
  } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-
-import image from "../assets/linked_propic.jpg"
+import '../styles.css';
 
 const Home: React.FC = () => { 
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+    const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
 
 return (
-
-  <Container id="about" sx={{height:'100vh', alignItems:'center', justifyContent:'center', display: 'flex'}}>
+  <Container id="about" 
+        sx={{
+            height:'100vh'
+        }}>
         <Stack 
-            direction="row" 
-            alignItems="center" 
-            justifyContent="center" 
-            spacing={5}
+            height='100%'            
+            direction='column'
+            alignItems="center"
+            justifyContent= {isMobile ? "center" : "start"}       
         >    
         <Stack>
-            <Box sx={{width: '460px'}}>
-                <Typography variant='h3'> Hi, my name is Mei. </Typography>
-                <Typography sx={{marginY:2}}> A full-stack software engineer driven by curiosity and a passion for building efficient and impactful solutions.  </Typography>
-                <Button variant='contained' color="secondary" sx={{borderRadius:5}}> Contact </Button>
-            </Box>                    
-                    
-            </Stack>
-            <Box sx={{position: 'relative'}}>
-                <Box sx={{
-                        width: 100, 
-                        height: 100, 
-                        position: 'absolute', 
-                        top: -10,
-                        left: -10, 
-                        zIndex: -10,
-                        borderTop: 1, 
-                        borderLeft: 1,
-                        }}> 
-                    </Box>
-                <Box 
-                    component="img" 
-                    src={image} 
-                    sx={{
-                        width: 250, 
-                        height: 250, 
-                        marginRight: 1, 
-                        // position:'relative'
-                    }}> 
-                </Box>
-                <Box sx={{
-                    width: 200, 
-                    height: 200, 
-                    position: 'absolute', 
-                    border: 1, 
-                    right: -20,
-                    bottom: -30, 
-                    zIndex: -10
-                    }}> 
-                </Box>
-            </Box>
+            <Box sx={{
+                display: 'flex', 
+                flexDirection:'column',
+                justifyContent: 'center', 
+                alignItems: 'start',
+                maxWidth: '35rem',
+                marginTop: isMobile ? 0 : 15,
+                marginBottom: isMobile ? 30: 0,
+                }}>
+               <Typography variant='h3'>
+                  <span className="typing-animation">Hey, I'm Mei.</span>
+                </Typography>
+                <Typography sx={{marginY:2}}> <span className="fade-in">
+                   A full-stack software engineer driven by curiosity and a passion for building efficient and impactful solutions.  
+                   </span>
+                   </Typography>
+                <Button variant='contained' className="button-appear" color="secondary" sx={{borderRadius:5}}> Contact </Button>
+            </Box>                               
+        </Stack>
+        <Box sx={{
+                position: 'absolute',
+                width: '100%',
+                maxWidth: '700px',
+                height: 'auto',
+                aspectRatio: '1',
+            }}>
+        
+        <Animation className="svg-animate"/>
+
+    {/* <DotLottieReact
+      src="https://lottie.host/0404b2cf-3a04-49af-82e7-4dbe34915956/3ZI9PYL6Qe.lottie"
+      loop
+      autoplay
+    /> */}
+  {/* );
+};
+  
+    <DotLottieReact
+      src="/assets/GirlCouch.json"
+      loop
+      autoplay
+    />  */}
+        </Box>
+   
         </Stack>
   </Container>
 );
