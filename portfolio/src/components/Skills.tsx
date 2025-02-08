@@ -1,4 +1,6 @@
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Container} from '@mui/material';
+import Grid from '@mui/material/Grid2';
+
 import HTML from '../assets/skills/HTML5.png';
 import CSS from '../assets/skills/CSS3.png';
 import JS from '../assets/skills/JavaScript.png';
@@ -42,27 +44,32 @@ export default function Skills() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
-      <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent:'space-around', padding: '20px', mb:15}}>
+    <Container disableGutters 
+      sx={{ 
+        minWidth:'100%', 
+        minHeight: '70vh', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        display: 'flex', 
+      }}> 
+      <Box sx={{ 
+            display: 'flex', 
+            width: '100%',
+            flexDirection: isMobile ? 'column' : 'row', 
+            alignItems: 'center', 
+            justifyContent:'space-around',
+            padding: '20px', 
+            mb:15,
+          }}>
         {/* Skills Title */}
-        <Box sx={{ width: '150px', marginRight: '30px', textAlign: 'left' }}>
-          <Typography variant="h3" sx={{ fontWeight: 'bold', marginBottom: '20px' }}>
+        <Box>
+          <Typography variant="h2" sx={{ fontWeight: 'bold', marginBottom: '20px'}}>
             SKILLS
           </Typography>
           <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box>
-
-        </Box>
-  
-        {/* Skills Columns */}
-          {isMobile ? <> 
-          <Grid container spacing={2} justifyContent="center">
-          {skills.map((skill, index) => (
-            <Grid item xs={4} sm={3} md={2} key={index}>
-              <SkillBox name={skill.name} image={skill.image} />
-            </Grid>
-          ))}
-      </Grid></> : 
+        </Box>   
+   
         <Box sx={{ display: 'flex', gap: '30px'}}>
-        
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:10}}>
             {skills.slice(0, 3).map((skill, index) => (
               <SkillBox key={index} name={skill.name} image={skill.image}/>
@@ -85,7 +92,8 @@ export default function Skills() {
               ))}
           </Box>
       </Box>
-    }
+  
   </Box>
+  </Container>
   )
 }

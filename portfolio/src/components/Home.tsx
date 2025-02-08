@@ -18,7 +18,7 @@ const Home: React.FC = () => {
 return (
   <Container id="about" 
         sx={{
-            minHeight:'90vh',
+            minHeight:'80vh',
             paddingTop: '5rem',
         }}>
         <Stack 
@@ -29,14 +29,14 @@ return (
         >    
         <Stack>
             <Box sx={{
-                display: 'flex', 
+              display: 'flex', 
                 flexDirection:'column',
                 justifyContent: 'center', 
                 alignItems: 'start',
-                maxWidth: '22rem',
+                maxWidth: '27rem',
                 marginTop: isMobile ? 0 : 10,
                 marginBottom: isMobile ? 35: 30,
-                }}>
+              }}>
                <Typography variant='h3'>
                   <span className="typing-animation">Hey, I'm Mei.</span>
                 </Typography>
@@ -48,30 +48,15 @@ return (
             </Box>                               
         </Stack>
         <Box sx={{
-                position: 'absolute',
-                width: '100%',
-                maxWidth: '700px',
-                height: 'auto', 
-                right: 0,
-                border: 1,
-            }}>
+          position: 'absolute',
+          width: '100%',
+          maxWidth: '700px',
+          height: 'auto', 
+          right: 0,
+            
+        }}>
         <Animation className="svg-animate" />
-
-    {/* <DotLottieReact
-      src="https://lottie.host/0404b2cf-3a04-49af-82e7-4dbe34915956/3ZI9PYL6Qe.lottie"
-      loop
-      autoplay
-    /> */}
-  {/* );
-};
-  
-    <DotLottieReact
-      src="/assets/GirlCouch.json"
-      loop
-      autoplay
-    />  */}
         </Box>
-   
         </Stack>
   </Container>
 );

@@ -47,33 +47,16 @@ const ExperienceSection: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Stack marginY={13}>
-      <Box display="flex" alignItems="center" justifyContent="flex-start" position="relative" marginLeft={10}> 
-       <Typography variant="h3" gutterBottom textAlign="center" marginBottom={5} position='relative'>
+    <Stack minHeight='85vh'>
+       <Typography variant="h2" gutterBottom textAlign="center" marginBottom={10}>
                 EXPERIENCE  
         </Typography>
-        <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box> 
-      </Box>
-      
       {experiences.map((experience, index) => (
-        <Stack key={index} mx={20} flexDirection={isMobile ? 'column-reverse' : 'row'} alignItems='center' justifyContent='space-between' gap={1}>
-        
-        <Box sx={{ width: '19.5rem', border: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', }}>
-      {!isMobile && (
-        <>
-          <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '10px' }}>
-            {experience.company}
-          </Typography>
-          <Box sx={{ height: '2px', width: '200px', backgroundColor: '#000', marginBottom: '20px' }}></Box>
-        </>
-      )}
-      <Typography variant="body1" sx={{ textAlign: 'center', maxWidth: '600px', lineHeight: '1.6'}}>
-        {experience.description}
-      </Typography>
-    </Box>
+        <Stack key={index} flexDirection='row' alignItems='center' justifyContent='center' gap={3} >
           <Box> 
+          <Typography fontSize="12rem" mb={15} > &lt; </Typography>
           </Box>
-          <Box sx={{ position: 'relative' }}>
+          <Stack> 
             <Box component="a" href={experience.link} target="_blank" rel="noopener noreferrer">
               <Box component="img" src={experience.logo}
                 sx={{
@@ -89,11 +72,24 @@ const ExperienceSection: React.FC = () => {
                   }
                 }} />
             </Box>
-          </Box>
+            <Typography fontSize="1.2rem" textAlign='right' padding={2}  > Software Engineer Intern </Typography>
+          </Stack>
+            <Typography fontSize="12rem" mb={1}> &gt; </Typography>
+          </Stack>
+           ))}
         </Stack>
-      ))}
-    </Stack>
   );
 };
+        {/* <Box sx={{ width: '19.5rem', border: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', }}>
+      {!isMobile && (
+        <>
+          <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '10px' }}>
+            {experience.company}
+          </Typography>
+          <Box sx={{ height: '2px', width: '200px', backgroundColor: '#000', marginBottom: '20px' }}></Box>
+        </>
+      )}
+    </Box> */}
+      
 
 export default ExperienceSection;

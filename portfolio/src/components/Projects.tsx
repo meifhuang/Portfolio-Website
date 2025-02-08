@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-import { Box, Grid2, Card, CardContent, CardMedia, Typography, Button, Stack} from '@mui/material';
+import { Box, Grid2, Card,  Typography, Button, Stack} from '@mui/material';
 import GymSocial from '../assets/gym social.png';
 import TrailYelp from '../assets/trail-pic.png';
 import MembersOnly from '../assets/membersonly-pic.png';
@@ -262,6 +262,7 @@ const Projects: React.FC = () => {
                       `
                   }
                 </style>
+              
             </Stack>
 
     )}
