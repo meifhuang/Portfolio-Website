@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Stack, 
   Box, 
   Typography,
   Divider, 
-  useMediaQuery
+  Container, 
+  useMediaQuery,
+  Button,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -29,43 +31,25 @@ const About: React.FC = () => {
 
     },
   ]
-
+ 
   return (
-
+    <Container id="about" sx={{ minHeight: '90vh',alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
     <Stack sx={{ height: 'fit-content' }}>
       <Typography variant="h3" gutterBottom textAlign="center" p={6}>
         ABOUT ME
       </Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-        <Box sx={{ 
-          display: 'flex', 
-          flexDirection: isMobile ? 'column' : 'row', 
-          alignItems: 'start', 
-          width: '90%', 
-          mb: 4, 
-          position:'relative', 
-          mx:'auto'
-          }}>
+      <Box sx={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%', margin: '20px 0'}}>
           {timeline.map((step, index) => (
-              <React.Fragment key={index}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mx: 2, minWidth: '220px', animation: 'fadeIn 1s ease-in-out' }}>
-                  <Box sx={{ width: '60px', height: '60px', mb: 3, zIndex: 1 }}>
-                    {step.icon}
-                  </Box>
-                  <Box sx={{ width: '270px', textAlign: 'center' }}>
-                    <Typography variant="body1">
-                      {step.text}
-                    </Typography>
-                  </Box>
-                </Box>
-                {index < timeline.length - 1 && (
-                  <Divider orientation="vertical" flexItem sx={{ mx: 2 }} />
-                )}
-              </React.Fragment>
-            ))}
+            <Box key={index} className="timeline-icon" sx={{position: 'relative', zIndex: 1, margin: '5rem', cursor:'pointer', width: '100px'}} >
+              {step.icon}
+              <Box className="timeline-text">
+                <Typography variant="body2">{step.text}</Typography>
+              </Box>
+            </Box>
+          ))}
         </Box>
-      </Box>
     </Stack>
+  </Container>
   )}
 
 export default About;

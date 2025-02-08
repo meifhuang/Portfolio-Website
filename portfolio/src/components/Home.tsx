@@ -18,13 +18,14 @@ const Home: React.FC = () => {
 return (
   <Container id="about" 
         sx={{
-            height:'100vh'
+            minHeight:'90vh',
+            paddingTop: '5rem',
         }}>
         <Stack 
             height='100%'            
             direction='column'
-            alignItems="center"
-            justifyContent= {isMobile ? "center" : "start"}       
+            alignItems="start"
+            justifyContent= "center"  
         >    
         <Stack>
             <Box sx={{
@@ -32,9 +33,9 @@ return (
                 flexDirection:'column',
                 justifyContent: 'center', 
                 alignItems: 'start',
-                maxWidth: '35rem',
-                marginTop: isMobile ? 0 : 15,
-                marginBottom: isMobile ? 30: 0,
+                maxWidth: '22rem',
+                marginTop: isMobile ? 0 : 10,
+                marginBottom: isMobile ? 35: 30,
                 }}>
                <Typography variant='h3'>
                   <span className="typing-animation">Hey, I'm Mei.</span>
@@ -50,11 +51,11 @@ return (
                 position: 'absolute',
                 width: '100%',
                 maxWidth: '700px',
-                height: 'auto',
-                aspectRatio: '1',
+                height: 'auto', 
+                right: 0,
+                border: 1,
             }}>
-        
-        <Animation className="svg-animate"/>
+        <Animation className="svg-animate" />
 
     {/* <DotLottieReact
       src="https://lottie.host/0404b2cf-3a04-49af-82e7-4dbe34915956/3ZI9PYL6Qe.lottie"

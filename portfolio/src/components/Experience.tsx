@@ -52,25 +52,32 @@ const ExperienceSection: React.FC = () => {
        <Typography variant="h3" gutterBottom textAlign="center" marginBottom={5} position='relative'>
                 EXPERIENCE  
         </Typography>
-        <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box>
+        <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box> 
       </Box>
-
+      
       {experiences.map((experience, index) => (
-        <Stack key={index} mx={20} flexDirection='row' alignItems='center' justifyContent='space-between' gap={1}>
-          <Box sx={{width: '400px'}}>
-            <Typography variant='h4'>
-              {experience.company}
-            </Typography>
-            <Box sx={{height:'2px', width:'200px', border:1, ml: 5, my: 3}}> </Box>
-            <Typography> {experience.description} </Typography>
-          </Box>
+        <Stack key={index} mx={20} flexDirection={isMobile ? 'column-reverse' : 'row'} alignItems='center' justifyContent='space-between' gap={1}>
+        
+        <Box sx={{ width: '19.5rem', border: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', }}>
+      {!isMobile && (
+        <>
+          <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '10px' }}>
+            {experience.company}
+          </Typography>
+          <Box sx={{ height: '2px', width: '200px', backgroundColor: '#000', marginBottom: '20px' }}></Box>
+        </>
+      )}
+      <Typography variant="body1" sx={{ textAlign: 'center', maxWidth: '600px', lineHeight: '1.6'}}>
+        {experience.description}
+      </Typography>
+    </Box>
           <Box> 
           </Box>
           <Box sx={{ position: 'relative' }}>
             <Box component="a" href={experience.link} target="_blank" rel="noopener noreferrer">
               <Box component="img" src={experience.logo}
                 sx={{
-                  minWidth: '240px',
+                  minWidth: '280px',
                   height: '200px',
                   border: 1,
                   borderRadius: '1rem',
