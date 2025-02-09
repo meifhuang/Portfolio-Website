@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Stack, 
   Box, 
   Typography,
-  Divider, 
   Container, 
   useMediaQuery,
-  Button,
   Fade,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';

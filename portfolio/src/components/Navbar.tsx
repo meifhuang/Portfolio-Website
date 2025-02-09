@@ -25,7 +25,7 @@ const MenuLink = styled('a')(({
   color: 'white',
   transition: 'all 1s ease-in-out',
   '&:hover': {
-    color: '#ffcc80', // Change hover color if needed
+    color: '#ffcc80',
   },
 }));
 

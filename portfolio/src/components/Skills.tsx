@@ -1,6 +1,4 @@
 import { Box, Typography, Container} from '@mui/material';
-import Grid from '@mui/material/Grid2';
-
 import HTML from '../assets/skills/HTML5.png';
 import CSS from '../assets/skills/CSS3.png';
 import JS from '../assets/skills/JavaScript.png';
@@ -61,7 +59,6 @@ export default function Skills() {
             padding: '20px', 
             mb:15,
           }}>
-        {/* Skills Title */}
         <Box>
           <Typography variant="h2" sx={{ fontWeight: 'bold', marginBottom: '20px'}}>
             SKILLS

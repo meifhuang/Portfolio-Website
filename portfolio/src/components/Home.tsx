@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
 
 return (
-  <Container id="about" 
+  <Container id="home" 
         sx={{
             minHeight:'80vh',
             paddingTop: '5rem',
