@@ -1,4 +1,7 @@
 /* Add this CSS to your main CSS file or use inline styles */
+/* html {
+  scroll-behavior: smooth;
+} */
 .typing-animation {
     display: inline-block;
     overflow: hidden;

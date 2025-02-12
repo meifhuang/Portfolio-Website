@@ -22,6 +22,7 @@ const StyledTypography = styled(Typography)<{
   },
 });
 
+
 const MenuLink = styled('a')(({
   textAlign: 'center',
   color: 'white',
@@ -40,6 +41,16 @@ const Navbar: React.FC = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleMenuClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    toggleMenu();
+  };
+
+
   const menuList = (
     <Box
       sx={{
@@ -56,7 +67,7 @@ const Navbar: React.FC = () => {
       }}
     >
       {['home', 'about', 'projects', 'contact'].map((text) => (
-        <StyledTypography sx={{ mx: 2 , my: 1}}><MenuLink onClick={toggleMenu} href={`#${text}`}>{text}</MenuLink></StyledTypography>
+        <StyledTypography sx={{ mx: 2 , my: 1}}><MenuLink onClick={(e)=> handleMenuClick(e,text)} href={`#${text}`}>{text}</MenuLink></StyledTypography>
       ))}
     </Box>
   );
@@ -71,7 +82,7 @@ return (
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#home">home</MenuLink></StyledTypography>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#about">about</MenuLink></StyledTypography>
-        <StyledTypography sx={{ mx: 2 }}><MenuLink href="#project">projects</MenuLink></StyledTypography>
+        <StyledTypography sx={{ mx: 2 }}><MenuLink href="#projects">projects</MenuLink></StyledTypography>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#contact">contact</MenuLink></StyledTypography>
       </Box>
       <IconButton

@@ -15,6 +15,14 @@ const Home: React.FC = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
 
+     const handleScroll = (event: React.MouseEvent<HTMLElement>, id: string) => {
+        event.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
 return (
   <Container id="home" 
         sx={{
@@ -44,7 +52,13 @@ return (
                    A full-stack software engineer driven by curiosity and a passion for building efficient and impactful solutions.  
                    </span>
                    </Typography>
-                <Button variant='contained' className="button-appear" color="secondary" sx={{borderRadius:5}}> Contact </Button>
+                
+                <Button variant='contained' className="button-appear" color="secondary" 
+                onClick={(e)=>handleScroll(e,'contact')}
+                sx={{borderRadius: 5}}
+                >
+                  Contact Me 
+                </Button>
             </Box>                               
         </Stack>
         <Box sx={{
