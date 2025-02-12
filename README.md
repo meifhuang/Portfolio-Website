@@ -1,5 +1,5 @@
 # Portfolio-Website
 
-Portfolio site created with Pure HTML CSS JS
+Check out my portfolio site! 
 
 <a href="https://mei-huang-iulv.onrender.com/"> See portfolio site </a>
