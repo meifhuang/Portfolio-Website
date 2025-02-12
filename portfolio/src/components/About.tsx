@@ -47,20 +47,20 @@ const About: React.FC = () => {
         </React.Fragment>
       )   
     } 
-      <Stack borderLeft={1.5} flexDirection='column' padding={3}>
-      {isMobile && <Typography textAlign="start" sx={{marginLeft: '1.5rem', fontSize: '2.2rem', fontWeight: 500, mb: 5}}>ABOUT ME</Typography>}
+      <Stack flexDirection='column' sx={{borderLeft: isMobile ? 0 : 1.5}}>
+      {isMobile && <Typography textAlign="start" variant='h2'  sx={{mb: 5, textWrap: 'nowrap'}}>ABOUT ME</Typography>}
       {timeline.map((step, index) => (
         <Fade in={true} timeout={(index + 1) * 1000} key={index}>
           <Stack flexDirection='row' alignItems='center' justifyContent='center' sx={{ marginBottom: '25px'}}>
             <Box 
               className="timeline-icon" 
               sx={{ 
-                width: '65px', 
-                height: '65px', 
+                width: isMobile ? '45px' : '65px', 
+                height: isMobile ? '45px' : '65px',
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'center', 
-                marginX: '2rem',
+                marginX: isMobile ? '1rem' : '2rem'
 
               }} 
             >

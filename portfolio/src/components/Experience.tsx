@@ -3,6 +3,7 @@ import {
   Box,  
   Typography, 
   Stack,
+  useMediaQuery
 } from '@mui/material';
 import BazarLogo from "../assets/bazarlogo.png";
 import { useTheme } from '@mui/material/styles';
@@ -32,6 +33,8 @@ const experiences: Experience[] = [
 
 const ExperienceSection: React.FC = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
 
   return (
     <Stack minHeight='85vh'>
@@ -39,10 +42,10 @@ const ExperienceSection: React.FC = () => {
                 EXPERIENCE  
         </Typography>
       {experiences.map((experience, index) => (
-        <Stack key={index} flexDirection='row' alignItems='center' justifyContent='center' gap={3} >
+        <Stack key={index} flexDirection='row' alignItems='center' justifyContent='center' gap={1} >
           <Box> 
           {/* <Typography fontSize="12rem" mb={15} > &lt; </Typography> */}
-          <Box component='img' src={bazarLeft} width="9rem" mb={15} />
+          {!isMobile && <Box component='img' src={bazarLeft} width="9rem" mb={15} />}
           </Box>
           <Stack> 
             <Box component="a" href={experience.link} target="_blank" rel="noopener noreferrer">
@@ -63,9 +66,7 @@ const ExperienceSection: React.FC = () => {
             </Box>
             <Typography fontSize="1.2rem" textAlign='right' padding={2}  > Software Engineer Intern </Typography>
           </Stack>
-          <Box component='img' src={bazarRight} width="9rem" mb={1}/>
-
-            {/* <Typography fontSize="12rem" mb={1} > &gt; </Typography> */}
+          {!isMobile && <Box component='img' src={bazarRight} width="9rem" mb={1}/>}
           </Stack>
            ))}
         </Stack>

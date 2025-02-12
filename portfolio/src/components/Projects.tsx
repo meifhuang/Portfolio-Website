@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card,  Typography, Stack, Link} from '@mui/material';
+import { Box, Card,  Typography, Stack, Link, useMediaQuery} from '@mui/material';
 import GymSocial from '../assets/gym social.png';
 import TrailYelp from '../assets/trail-pic.png';
 import MembersOnly from '../assets/membersonly-pic.png';
@@ -11,6 +11,7 @@ import { useTheme } from '@mui/material/styles';
 
 const Projects: React.FC = () => {
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const projects = [
         {
@@ -65,8 +66,8 @@ const Projects: React.FC = () => {
       
     return ( 
             <Stack  sx={{marginY: 5}}>
-               <Box id="project" display="flex" alignItems="center" justifyContent="flex-start" position="relative" marginLeft={10}> 
-                <Typography variant="h3" gutterBottom textAlign="center" marginBottom={5} position='relative'>
+               <Box id="projects" display="flex" alignItems="center"  position="relative" sx={{marginLeft: isMobile ? '0' : '10px' }}> 
+                <Typography variant="h2" gutterBottom textAlign="center" marginBottom={5} position='relative'>
                            PROJECTS
                     </Typography>
                     <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box>

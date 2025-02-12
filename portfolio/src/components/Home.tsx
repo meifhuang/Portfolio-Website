@@ -18,7 +18,7 @@ const Home: React.FC = () => {
 return (
   <Container id="home" 
         sx={{
-            minHeight:'80vh',
+            minHeight:'75vh',
             paddingTop: '5rem',
         }}>
         <Stack 

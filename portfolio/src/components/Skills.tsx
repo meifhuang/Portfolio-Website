@@ -1,4 +1,4 @@
-import { Box, Typography, Container} from '@mui/material';
+import { Box, Typography, Container, Grid } from '@mui/material';
 import HTML from '../assets/skills/HTML5.png';
 import CSS from '../assets/skills/CSS3.png';
 import JS from '../assets/skills/JavaScript.png';
@@ -60,12 +60,20 @@ export default function Skills() {
             mb:15,
           }}>
         <Box>
-          <Typography variant="h2" sx={{ fontWeight: 'bold', marginBottom: '20px'}}>
+          <Typography variant="h2" sx={{ marginBottom: '20px'}}>
             SKILLS
           </Typography>
-          <Box sx={{ flexGrow: 1, height: "2px", backgroundColor: "black", mb: 4, mx:5}} ></Box>
+          <Box sx={{ flexGrow: 1, height: "3px", backgroundColor: "black", mb: 4, mx:5}} ></Box>
         </Box>   
-   
+   {isMobile ? 
+      <Grid container spacing={1} marginX='auto' justifyContent="center">
+      {skills.map((skill, index) => (
+        <Grid item sm={2} key={index}>
+          <SkillBox name={skill.name} image={skill.image} />
+        </Grid>
+      ))}
+    </Grid> 
+      : 
         <Box sx={{ display: 'flex', gap: '30px'}}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', mt:10}}>
             {skills.slice(0, 3).map((skill, index) => (
@@ -89,7 +97,7 @@ export default function Skills() {
               ))}
           </Box>
       </Box>
-  
+}  
   </Box>
   </Container>
   )
