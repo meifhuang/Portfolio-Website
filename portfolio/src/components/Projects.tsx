@@ -6,6 +6,7 @@ import MembersOnly from '../assets/membersonly-pic.png';
 import Library from "../assets/library-pic.png";
 import Memory from "../assets/memory-pic.png";
 import Modura from "../assets/modura-pic.png";
+import Claritea from "../assets/claritea.png";
 import { useTheme } from '@mui/material/styles';
 
 
@@ -61,6 +62,14 @@ const Projects: React.FC = () => {
             live: 'https://memory-card-game-pyv0.onrender.com/',
             description: 'A Pokemon memory card game',
             skills: ['react']
+          },
+          {
+            title: 'Claritea',
+            img: Claritea,
+            // github: 'https://github.com/meifhuang/Memory-Card-Game',
+            live: 'https://beta.claritea.fyi/',
+            description: 'A content creator review platform for pay transparency',
+            skills: ['typescript', 'react', 'mui', 'postgressql']
           },
       ];
       
@@ -161,7 +170,7 @@ const Projects: React.FC = () => {
                             </Typography>
 
                       
-                            <Typography variant="body1" sx={{ textAlign: "center", px: 3, mt: 2 }}>
+                            <Typography variant="body1" sx={{ textAlign: "center", px: 3, mt: 2, textWrap: "wrap" }}>
                             {project.description}
                             </Typography>
 
@@ -199,6 +208,7 @@ const Projects: React.FC = () => {
                             >
                                 Visit Website
                             </Link>
+                            {project.github &&
                             <Link
                                 href={project.github}
                                 target="_blank"
@@ -216,6 +226,7 @@ const Projects: React.FC = () => {
                             >
                                 GitHub
                             </Link>
+                              }
                             </Box>
                         </Box>
                         </Box>
