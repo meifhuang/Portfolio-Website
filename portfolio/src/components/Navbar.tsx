@@ -77,7 +77,7 @@ return (
   <AppBar position="static" color="secondary" sx={{height: '75px', boxShadow:'none'}} >
     <Toolbar>
       <Typography variant="h3" component="div" sx={{ flexGrow: 1 }} color="white">
-        mh
+        mh.
       </Typography>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#home">home</MenuLink></StyledTypography>
