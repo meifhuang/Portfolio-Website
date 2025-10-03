@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
       
     return ( 
             <Stack  sx={{marginY: 5}}>
-               <Box id="projects" display="flex" alignItems="center"  position="relative" sx={{marginLeft: isMobile ? '0' : '10px' }}> 
+               <Box id="projects" display="flex" alignItems="center"  position="relative" sx={{marginLeft: isMobile ? '0' : 7 }}> 
                 <Typography variant="h2" gutterBottom textAlign="center" marginBottom={5} position='relative'>
                            PROJECTS
                     </Typography>
@@ -87,12 +87,14 @@ const Projects: React.FC = () => {
                         whiteSpace: "nowrap",
                         width: '100%',
                         position: 'relative',
+                        
 
                 }} 
                 >
                 <Box
                     sx={{
                         display: 'inline-block',
+                      
                         animation: "scroll-left 90s linear infinite", 
                         animationPlayState: 'running', 
                         '&:hover' : {
@@ -100,7 +102,7 @@ const Projects: React.FC = () => {
                         }
                     }}
                 >
-               {projects.concat(projects).concat(projects).concat(projects).map((project, index) => (
+               {projects.concat(projects).concat(projects).concat(projects).concat(projects).map((project, index) => (
                     <Card sx={{
                         key: {index}, 
                         display:'inline-block', 

@@ -45,7 +45,7 @@ export default function Skills() {
     <Container disableGutters 
       sx={{ 
         minWidth:'100%', 
-        minHeight: '70vh', 
+        minHeight: '85vh', 
         alignItems: 'center', 
         justifyContent: 'center', 
         display: 'flex', 
