@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
         padding: '10px 0',
       }}
     >
-      {['home', 'about', 'projects', 'contact'].map((text) => (
+      {['home', 'about', 'experience','projects', 'contact'].map((text) => (
         <StyledTypography sx={{ mx: 2 , my: 1}}><MenuLink onClick={(e)=> handleMenuClick(e,text)} href={`#${text}`}>{text}</MenuLink></StyledTypography>
       ))}
     </Box>
@@ -116,6 +116,7 @@ return (
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#home">home</MenuLink></StyledTypography>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#about">about</MenuLink></StyledTypography>
+        <StyledTypography sx={{ mx: 2 }}><MenuLink href="#experience">experience</MenuLink></StyledTypography>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#projects">projects</MenuLink></StyledTypography>
         <StyledTypography sx={{ mx: 2 }}><MenuLink href="#contact">contact</MenuLink></StyledTypography>
       </Box>

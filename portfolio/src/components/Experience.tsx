@@ -46,8 +46,8 @@ const ExperienceSection: React.FC = () => {
   // const isiPad = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
-    <Stack minHeight="85vh" sx={{ py: 6 }}>
-      <Typography variant="h2" gutterBottom textAlign="center" sx={{ mb: 10 }}>
+    <Stack minHeight="85vh" sx={{ py: 6 }} id="experience">
+      <Typography variant="h2" gutterBottom textAlign="center" sx={{ mb: 10 }} >
         EXPERIENCE
       </Typography>
 
