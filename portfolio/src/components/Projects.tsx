@@ -139,7 +139,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <Stack sx={{ marginY: 5, minHeight: '85vh' }} id="projects">
+    <Stack sx={{ marginY: 10, minHeight: '85vh' }} id="projects">
       {/* <Box id="projects" display="flex" alignItems="center" position="relative" > */}
         <Typography variant="h2" gutterBottom textAlign="center" marginBottom={5} position='relative'>
           PROJECTS
@@ -152,12 +152,15 @@ const Projects: React.FC = () => {
         <Tabs
           value={selectedCategory}
           onChange={handleTabChange}
+          variant="scrollable"
+          scrollButtons="auto"        // shows scroll buttons when needed
+      allowScrollButtonsMobile 
           sx={{
             '& .MuiTab-root': {
               fontSize: '1rem',
               fontWeight: 500,
               textTransform: 'none',
-              minWidth: 120,
+              // minWidth: 120,
               color: 'text.secondary',
               '&.Mui-selected': {
                 color: theme.palette.secondary.main,
@@ -170,8 +173,8 @@ const Projects: React.FC = () => {
           }}
         >
           <Tab label="All Projects" value="all" />
-          <Tab label="Web Development" value="web" />
           <Tab label="Data Science" value="data" />
+          <Tab label="Web Development" value="web" />
           <Tab label="Hackathon" value="hackathon" />
         </Tabs>
       </Box>

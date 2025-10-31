@@ -109,7 +109,7 @@ return (
         background: getBackgroundColor(),
         transition: 'background 0.1s ease-out'
       }} >
-    <Toolbar sx={{height:"100px", mx: '2rem'}}>
+    <Toolbar sx={{height:"6rem", mx: '2rem'}}>
       <Typography variant="h3" component="div" sx={{ flexGrow: 1, fontWeight: 'bold'}} color="white">
         mh.
       </Typography>
