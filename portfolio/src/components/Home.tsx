@@ -57,8 +57,9 @@ return (
                   <span className="typing-animation">Hi, I'm Mei.</span>
                 </Typography>
                 <Typography sx={{marginY:1.25, fontSize: '20px', textAlign: 'center'}}> <span className="fade-in">
-                  A data engineer who loves making sense of messy data  <br/> 
-                  and building pipelines that drive insight and impact.
+                  A full-stack software engineer driven by curiosity <br/> and a passion for building efficient and impactful solutions.
+                  {/* A data engineer who loves making sense of messy data  <br/> 
+                  and building pipelines that drive insight and impact. */}
                    </span>
                    </Typography>
   
