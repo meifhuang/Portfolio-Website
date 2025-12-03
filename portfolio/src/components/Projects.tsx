@@ -10,6 +10,7 @@ import Modura from "../assets/modura-pic.png";
 import Claritea from "../assets/claritea.png";
 import Debug from "../assets/debugger.png";
 import Hackathon from "../assets/hackathon.png";
+import Dashboard from "../assets/dashboard.png";
 
 import NBA from "../assets/nba.png";
 import { useTheme } from '@mui/material/styles';
@@ -32,6 +33,16 @@ const Projects: React.FC = () => {
             category: 'web'
 
           },
+           {
+            title: 'Price Tracker',
+            img: Dashboard,
+            github: 'https://github.com/meifhuang/PriceTracker',
+            live: 'https://pricetracker-production-f4b9.up.railway.app/',
+            description: 'A web application for tracking pet food prices and manages cat expenses.',
+            skills: ['python', 'flask', 'postgressql', 'jinja'],
+            category: 'web'
+          },
+
           {
             title: 'Debugging Co-Pilot',
             img: Debug,
